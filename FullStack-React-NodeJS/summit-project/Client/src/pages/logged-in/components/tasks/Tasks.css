@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.tasks-container .create-task {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    border-bottom: 2px solid black;
+    min-height: 80px;
+    width: 100%;
+    top: 0;
+    padding: 10px 0;
+    overflow-y: hidden;
+}
+
+.tasks-container .create-task h1 {
+    width: 300px;
+    position: static;
+    
+}
+
+.tasks-container .create-task h1:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.tasks-container .create-task img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.tasks-container .new-task-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.tasks-container .new-task-background .new-task-div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 670px; 
+    height: 410px;
+    background-color: #eceff4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+}
+
+.tasks-container .new-task-background .new-task-div .close-window-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3c8cbd;
+}
+
+.tasks-container .new-task-background .new-task-div .close-window-container .close-window,
+.tasks-container .new-task-background .new-task-div .close-window-container .close-window-title {
+    padding: 10px; 
+    background-color: #3c8cbd;
+    font-weight: bolder;
+    box-shadow: 0 4px 8px rgba(0, 140, 189, 0.3);
+}
+
+.tasks-container .new-task-background .new-task-div .close-window-container .close-window:hover {
+    cursor: pointer;
+}
+
+.tasks-container .new-task-background .new-task-div .create-task-content {
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/*---------*/
+.tasks-container .tasks-table-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+.tasks-container h2{
+    margin: 5px;
+    height: 35px;
+    text-decoration: underline;
+}
+
+.tasks-container .tasks-table-container .tasks-table {
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+    width: 1700px; 
+    min-width: 1200px;
+    min-height: fit-content; 
+    border: 1px solid black;
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header {
+    font-weight: bold;
+    background-color: #3C8CBD;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header ,
+.tasks-container .tasks-table-container .tasks-table .task-row {
+    display: flex;
+    width: 100%;
+    
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header .refresh{
+    margin: 2px 13px;
+    height: 25px;
+
+}
+.tasks-container .tasks-table-container .tasks-table .tasks-header .refresh:hover{
+    cursor: pointer;
+}
+
+.tasks-container .tasks-table-container .tasks-table .task-row  {
+    background-color: #fff;
+}
+.tasks-container .tasks-table-container .tasks-table .task-row:hover{
+    background-color: lightgray;  
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tasks-container .tasks-table-container .tasks-table .task-row .delete-task{
+    margin: 2px 13px;
+    height: 25px;
+}
+
+.tasks-container .tasks-table-container .tasks-table .task-row .delete-task:hover{
+    font-weight: bold;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.tasks-container .tasks-table-container .tasks-table .task-row:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.tasks-container .tasks-table-container .tasks-table .task-row:nth-child(odd):hover{
+    background-color: lightgray;  
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header  span,
+.tasks-container .tasks-table-container .tasks-table .task-row span {
+    flex: 1; /* Equal space distribution for columns */
+    padding: 8px;
+    border-right: 1px solid black;
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(1),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(1) {
+    flex: 0 0 120px; /* Fixed width for column 1 */
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(2),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(2) {
+    flex: 0 0 300px; /* Fixed width for column 2 */
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(3),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(3) {
+    flex: 0 0 500px; /* Fixed width for column 3 */
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(4),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(4) {
+    flex: 0 0 200px; /* Fixed width for column 4 */
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(5),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(5) {
+    flex: 0 0 200px; /* Fixed width for column 5 */
+    border-right: 0;
+    border-right: 1px solid black;
+}
+
+.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(6),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(6) {
+    flex: 0 0 200px; /* Fixed width for column 6 */
+    border-right: 0;
+    border-right: 1px solid black;
+}
+/*.tasks-container .tasks-table-container .tasks-table .tasks-header span:nth-child(6),
+.tasks-container .tasks-table-container .tasks-table .task-row span:nth-child(6) {
+    flex: 0 0 50px; /* Fixed width for column 5 
+    border-right: 0;
+    border-left: 1px solid black;
+}*/

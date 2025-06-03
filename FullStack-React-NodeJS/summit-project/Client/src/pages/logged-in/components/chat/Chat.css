@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.chat-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 850px; /* Set fixed height for the container */
+    position: relative;
+    box-sizing: border-box;
+    align-self: flex-start;
+    overflow: hidden; /* Prevent container overflow */
+}
+
+.chat-container .screen-share-area{
+    display: flex;
+    width: 50%;
+    height: calc(100% - 20px);
+    position: absolute;
+    border: 2px solid blue;
+    margin-left: 200px;
+}
+
+.chat-container .remote-share-area {
+    display: none;
+    position: absolute;
+    bottom: 20px; /* Gives space between the screen share and remote video */
+    right: 20px;
+    width: 300px; /* Adjust based on your preference */
+    height: 200px; /* Adjust based on your preference */
+    object-fit: cover;
+    border: 2px solid #ccc;
+    background-color: black;
+    z-index: 0; /* This keeps the remote video beneath the screen share */
+    border-radius: 8px; /* Optional: gives a rounded corner */
+  }
+
+.chat-container .teams {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 10px;
+    width: 250px;
+    border: 2px solid black;
+    border-right: none;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 97%; /* Ensure it respects parent height */
+    box-sizing: border-box;
+}
+
+.chat-container .teams .team {
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #d5d5d5;
+}
+
+.chat-container .teams .team:hover {
+    background-color: #bcbbbb;
+    cursor: pointer;
+    font-size: large;
+}
+
+.chat-container .chat-room {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 5px 10px;
+    border: 2px solid black;
+    overflow: hidden;
+    max-height: 97%;
+}
+
+.chat-container .chat-room .message-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    margin-top: auto;
+    overflow-y: hidden;
+    min-height: 100px;
+}
+
+.chat-container .chat-room .message-row .message {
+    padding: 10px;
+    border-radius: 20px;
+    flex: 1;
+    max-width: 95%;
+    height: 100px;
+    resize: none;
+    margin-top: auto;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.chat-container .chat-room .message-row .send-btn {
+    margin-top: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container .chat-room .message-row .send-btn .Attachment-icon{
+    align-self: flex-end;
+    margin-bottom: 5px;
+    width: 40px; 
+    height: 40px;
+    pointer-events: none;
+}
+.chat-container .chat-room .message-row .send-btn .Attachment-icon:hover{
+    cursor: pointer;
+}
+
+.chat-container .chat-room .message-row .send-btn .share-screen-icon{
+    width: 40px; 
+    height: 50px;
+    pointer-events: none;
+}
+
+.chat-container .chat-room .messages {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    min-height: calc(100% - 120px);
+    margin-bottom: 10px;
+}
+
+.chat-container .chat-room .messages .messages-msg {
+    padding: 10px;
+    border: 1px solid black;
+    max-width: 90%;
+    white-space: normal; /* Ensures text wraps to the next line */
+    word-wrap: break-word; /* Breaks long words to fit the container */
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    height: fit-content;
+}
+
+.chat-container .chat-room .messages .me-message {
+    background-color: aquamarine;
+    min-height: fit-content;
+}
+
+.chat-container .chat-room .messages .other-message {
+    background-color: gray;
+    min-height: fit-content;
+}
+
+.chat-container .chat-room .messages .messages-msg .me {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    width: fit-content;
+    align-self: flex-start;
+    border-radius: 25px;
+    font-weight: bold;
+    overflow-y: hidden;
+    min-height: fit-content;
+}
+
+.chat-container .chat-room .messages .messages-msg .other {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    width: fit-content;
+    align-self: flex-end;
+    border-radius: 25px;
+    font-size: larger;
+    font-weight: bold;
+    height: fit-content;
+    overflow-y: hidden;
+    min-height: fit-content;
+}
+
+.chat-container .chat-room .messages .messages-msg .msg-text {
+    margin: 5px 20px;
+    font-size: larger;
+    overflow-y: hidden;
+    min-height: fit-content;
+}
+
+.chat-container .chat-room .messages .messages-msg .msg-text .link{
+    color: blue;
+}
+.chat-container .chat-room .messages .messages-msg .msg-text .link:hover{
+    cursor: pointer;
+}
+

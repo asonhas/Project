@@ -1,0 +1,24 @@
+.headerContainer {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    padding: 10px;
+    background-color: #3C8CBD;
+    color: white;
+    max-height: 50px;
+    height: 100%;
+    font-family: 'Verdana';
+    font-size: 25px;
+}
+
+.headerContainer .userData {
+    margin-right: 5px;
+    margin-left: auto;
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.headerContainer .title{
+    color: black; 
+    margin-left: 10px;
+}
